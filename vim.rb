@@ -18,7 +18,7 @@ class Vim < Plugin
       oldmap = Vim.maps[Vim.mode]
       newmap = Vim.maps[m]
 
-      except /iTerm/, /MacVim/, /Firefox/, /Chrome/, /Safari/, /PeepOpen/, /Quicksilver/, /1Password/, /Alfred/ do
+      except /iTerm/, /MacVim/, /Firefox/, /Chrome/, /Safari/, /PeepOpen/, /Quicksilver/, /1Password/, /Alfred/, /Thunderbird/ do
           oldmap.keys.each do |k|
               unmap(k)
           end
@@ -53,6 +53,7 @@ class Vim < Plugin
           'b' => lambda { send("<Alt-Left>") },
           'e' => lambda { send("<Alt-Right>") },
           '0' => lambda { send("<Cmd-Left>") },
+          '$' => lambda { send("<Cmd-Right>") },
 
           'gg' => lambda { send("<Home>") },
           'G' => lambda { send("<End>") },
